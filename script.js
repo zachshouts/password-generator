@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", askQuestions);
 
 var numOfChars = 0;
 var useLowerCase;
@@ -32,9 +32,9 @@ function writePassword() {
 
 // Your work starts here
 function generatePassword() {
-    askQuestions();
     generateParams();
-    console.log(params);
+    
+
     return password;
 }
 
