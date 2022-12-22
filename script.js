@@ -34,7 +34,7 @@ function writePassword() {
 function generatePassword() {
     askQuestions();
     generateParams();
-
+    console.log(params);
     return password;
 }
 
@@ -55,19 +55,19 @@ function askQuestions() {
 
 function generateParams() {
     if (useSpecialChars) {
-        params.concat(specialChars);
+        params = params.concat(specialChars);
     }
 
     if (useNums) {
-        params.concat(nums);
+        params = params.concat(nums);
     }
 
     if (useLowerCase) {
-        params.concat(lowerCase);
+        params = params.concat(lowerCase);
     }
 
     if (useUpperCase) {
-        params.concat(upperCase);
+        params = params.concat(upperCase);
     }
 }
 
