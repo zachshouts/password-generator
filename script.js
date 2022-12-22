@@ -34,8 +34,12 @@ function writePassword() {
 function generatePassword() {
     generateParams();
     
+    for (let i = 0; i < numOfChars; i++) {
+        var index = Math.floor(Math.random() * params.length);
+        output += params[index];
+    }
 
-    return password;
+    return output;
 }
 
 function askQuestions() {
@@ -50,6 +54,8 @@ function askQuestions() {
     if (!useSpecialChars && !useNums && !useLowerCase && !useUpperCase) {
         alert("Minimum of one category must be selected!");
         askQuestions();
+    } else {
+        writePassword();
     }
 }
 
@@ -70,16 +76,4 @@ function generateParams() {
         params = params.concat(upperCase);
     }
 }
-
-
-// use a loop to grab a random characters x number of times
-
-//   finalPassword += 
-
-
-
-
-
-
-
 
