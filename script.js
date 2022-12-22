@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-var numOfChars;
+var numOfChars = 0;
 var useLowerCase;
 var useUpperCase;
 var useNums;
@@ -32,15 +32,26 @@ function writePassword() {
 function generatePassword() {
     askQuestions();
 
+
+    return password;
 }
 
 function askQuestions() {
-    numOfChars = prompt("How many characters?");
+    while (numOfChars < 8 || numOfChars > 128) {
+        numOfChars = prompt("How many characters? (8 - 128)");
+    }
     useSpecialChars = confirm("Do you want to use special characters?");
     useNums = confirm("Do you want to use numbers?");
     useLowerCase = confirm("Do you want to use lower case letters?");
     useUpperCase = confirm("Do you want to use upper case letters?");
 
+    if (!useSpecialChars && !useNums && !useLowerCase && !useUpperCase) {
+        alert("Minimum of one category must be selected!");
+        askQuestions();
+    } else if (numOfChars < 8 || numOfChars > 128) {
+        alert("Number of characters must be between 8 - 128!");
+        askQuestions();
+    }
 }
 
 
