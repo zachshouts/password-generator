@@ -8,8 +8,8 @@ var numOfChars;
 var useLowerCase;
 var useUpperCase;
 var useNums;
-var okToUseSpecialChars;
-var finalPassword = "";
+var useSpecialChars;
+var output = "";
 
 // use global variables to list out all possible:
 // special characters
@@ -21,9 +21,25 @@ var upperCase = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 // numbers 
 var nums = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ];
 
+// Write password to the #password input
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+}
+
+// Your work starts here
+function generatePassword() {
+    askQuestions();
+
+}
+
 function askQuestions() {
-    var numOfChars = prompt("How many characters?");
-    okToUseSpecialChars = confirm("Do you want to use special characters?");
+    numOfChars = prompt("How many characters?");
+    useSpecialChars = confirm("Do you want to use special characters?");
+    useNums = confirm("Do you want to use numbers?");
+    useLowerCase = confirm("Do you want to use lower case letters?");
+    useUpperCase = confirm("Do you want to use upper case letters?");
 
 }
 
@@ -34,17 +50,8 @@ function askQuestions() {
 
 
 
-// Your work starts here
-function generatePassword() {
-    askQuestions();
-
-}
 
 
-// Write password to the #password input
-function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-}
+
+
 
