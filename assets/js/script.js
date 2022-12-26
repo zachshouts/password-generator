@@ -28,6 +28,13 @@ function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
+    numOfChars = 0;
+    useLowerCase = false;
+    useUpperCase = false;
+    useNums = false;
+    useSpecialChars = false;
+    output = "";
+    params = [];
 }
 
 // Your work starts here
