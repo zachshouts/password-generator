@@ -2,7 +2,7 @@
 
 [Click here to see live page](https://zachshouts.github.io/password-generator/)
 
-![Password-generator Site Image](./assets/password-generator.png)
+![Password-generator Site Image](./assets/images/password-generator.png)
 
 ## Description
 
